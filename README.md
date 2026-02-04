@@ -1,1 +1,497 @@
 # MALAYU ❤️
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Ronjita 💖</title>
+  <meta name="description" content="A little Valentine surprise 💘" />
+  <style>
+    :root{
+      --bg1:#0f1020;
+      --bg2:#2b0f1a;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.7);
+      --pink:#ff4d8d;
+      --pink2:#ff86b7;
+      --green:#30d158;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 15%, rgba(255,77,141,.35), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(48,209,88,.18), transparent 55%),
+        radial-gradient(900px 800px at 60% 90%, rgba(255,134,183,.20), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* Floating hearts */
+    .hearts{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:0.55;
+      z-index:0;
+    }
+    .heart{
+      position:absolute;
+      font-size:18px;
+      animation: floatUp linear infinite;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+    }
+    @keyframes floatUp{
+      from{ transform: translateY(20vh) translateX(0) rotate(0deg); opacity:0;}
+      10%{opacity:1}
+      to{ transform: translateY(-120vh) translateX(60px) rotate(35deg); opacity:0;}
+    }
+
+    .wrap{
+      position:relative;
+      z-index:1;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+    }
+
+    .card{
+      width:min(920px, 100%);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      overflow:hidden;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 18px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:13px;
+      color:var(--muted);
+    }
+    .badge b{color:var(--text); font-weight:650}
+    .tiny{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      padding:22px;
+    }
+    @media (max-width: 860px){
+      .content{ grid-template-columns:1fr; }
+    }
+
+    .panel{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+    }
+
+    h1{
+      margin:6px 0 8px;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size: clamp(20px, 2.3vw, 26px);
+      letter-spacing:-0.01em;
+    }
+    p{
+      margin:10px 0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size: 15.5px;
+    }
+
+    .bigline{
+      color:var(--text);
+      font-weight:650;
+    }
+
+    .btnRow{
+      display:flex;
+      gap:14px;
+      margin-top:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+      border-radius:14px;
+      padding:12px 16px;
+      font-weight:750;
+      font-size:16px;
+      transition: transform .12s ease, filter .12s ease;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    button:active{ transform: scale(.98); }
+
+    .yesBtn{
+      background: linear-gradient(135deg, var(--green), #8ef7a7);
+      color:#08240f;
+      box-shadow: 0 14px 30px rgba(48,209,88,.18);
+      transform-origin:center;
+    }
+    .noBtn{
+      background: rgba(255,255,255,0.08);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .hint{
+      margin-top:10px;
+      font-size:13px;
+      color: rgba(255,255,255,.68);
+    }
+
+    .miniCard{
+      margin-top:14px;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* “No” dodging area */
+    .playArea{
+      position:relative;
+      width:100%;
+      min-height:170px;
+    }
+
+    .noWrap{
+      position:absolute;
+      left: 160px;
+      top: 60px;
+      display:inline-block;
+    }
+
+    .status{
+      margin-top:10px;
+      min-height:26px;
+      font-size:14px;
+      color: rgba(255,255,255,.78);
+    }
+
+    /* Page switching */
+    .page{ display:none; }
+    .page.active{ display:block; }
+
+    /* Letter side */
+    .photo{
+      width:100%;
+      aspect-ratio: 4 / 5;
+      border-radius:18px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.06);
+    }
+    .letter{
+      white-space:pre-line;
+      font-size:15.5px;
+      color: rgba(255,255,255,.82);
+      line-height:1.65;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+    }
+
+    .footer{
+      padding:16px 22px 22px;
+      color: rgba(255,255,255,.62);
+      font-size:12.5px;
+      text-align:center;
+    }
+
+    a{
+      color: rgba(255,255,255,.88);
+      text-decoration: none;
+      border-bottom:1px dotted rgba(255,255,255,.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="badge">💌 Made with <b>too much</b> love</div>
+        <div class="tiny" id="dateLine"></div>
+      </div>
+
+      <!-- PAGE 1 -->
+      <div class="page active" id="page1">
+        <div class="content">
+          <div class="panel">
+            <h1>Hey Ronjita… 💖</h1>
+            <p class="bigline">
+              I know we’re long distance, but my heart is literally right there with you.
+            </p>
+            <p>
+              So I made you a tiny website — because words alone aren’t enough.
+              Before anything else… I need to ask you one important question:
+            </p>
+
+            <div class="miniCard">
+              <h2>Will you be my Valentine? 💘</h2>
+              <p style="margin-top:-4px;">Choose wisely 😄</p>
+
+              <div class="playArea" id="playArea">
+                <div class="btnRow">
+                  <button class="yesBtn" id="yesBtn">YES 😍</button>
+                  <!-- No button is placed absolutely so we can move it -->
+                  <span class="noWrap" id="noWrap">
+                    <button class="noBtn" id="noBtn">NO 🙄</button>
+                  </span>
+                </div>
+              </div>
+
+              <div class="status" id="status"></div>
+              <div class="hint">Tip: if “No” keeps acting weird… that’s because it is 😌</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>What this is 🥺</h2>
+            <p>
+              Just a small surprise — a warm little corner of the internet that belongs to us.
+              If you press “Yes”, there’s something waiting for you.
+            </p>
+            <p>
+              And if you press “No”… well… the universe might throw an “error” 😅
+            </p>
+            <p class="bigline">
+              Ready? 💞
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page" id="page2">
+        <div class="content">
+          <div class="panel">
+            <h1>YAYYYYY 😭💖</h1>
+            <p class="bigline">Okay… now come read this, my love.</p>
+
+            <div class="letter" id="letterText">
+My Ronjita 💗,
+
+Being far from you doesn’t make my feelings smaller.
+It makes them louder.
+
+I think about you in the little moments—
+when I wake up, when I see something beautiful,
+when I want to share a dumb joke,
+when I wish I could just hold your hand for one minute.
+
+I don’t need a perfect day.
+I just need you.
+
+So here I am, asking from my whole heart:
+Will you be my Valentine… and keep choosing me,
+again and again?
+
+Forever yours,
+— Aayush 💌
+            </div>
+
+            <div class="btnRow">
+              <button class="yesBtn" id="confettiBtn">Tap for extra love ✨</button>
+              <button class="noBtn" id="backBtn">Back</button>
+            </div>
+            <div class="status" id="status2"></div>
+          </div>
+
+          <div class="panel">
+            <h2>Her photo 📸</h2>
+            <p>Replace the image link in the code with your favorite photo of her.</p>
+            <img
+              class="photo"
+              id="herPhoto"
+              alt="Ronjita"
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+            />
+            <p class="hint">If you want it private, use a photo uploaded to your hosting site instead of a public link.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Made for Ronjita 💘 | If you want, I can also add music, a countdown, and a photo gallery.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Put today's date in the header
+    (function(){
+      const d = new Date();
+      const opts = { weekday:'short', year:'numeric', month:'short', day:'numeric' };
+      document.getElementById('dateLine').textContent = d.toLocaleDateString(undefined, opts) + " ✨";
+    })();
+
+    // Floating hearts background
+    (function makeHearts(){
+      const hearts = document.getElementById('hearts');
+      const emojis = ["💖","💘","💗","💕","💞","😍","🥺","✨"];
+      const count = 24;
+      for(let i=0;i<count;i++){
+        const s = document.createElement('div');
+        s.className = 'heart';
+        s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+        s.style.left = (Math.random()*100) + "vw";
+        s.style.top = (80 + Math.random()*40) + "vh";
+        s.style.animationDuration = (7 + Math.random()*8) + "s";
+        s.style.animationDelay = (Math.random()*6) + "s";
+        s.style.fontSize = (16 + Math.random()*18) + "px";
+        hearts.appendChild(s);
+      }
+    })();
+
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const noWrap = document.getElementById('noWrap');
+    const playArea = document.getElementById('playArea');
+
+    const status = document.getElementById('status');
+    const status2 = document.getElementById('status2');
+
+    let yesScale = 1;
+    let noCount = 0;
+
+    function showPage(n){
+      if(n === 1){
+        page1.classList.add('active');
+        page2.classList.remove('active');
+      }else{
+        page2.classList.add('active');
+        page1.classList.remove('active');
+      }
+    }
+
+    function moveNoButton(){
+      const areaRect = playArea.getBoundingClientRect();
+      const wrapRect = noWrap.getBoundingClientRect();
+      const btnW = wrapRect.width || 120;
+      const btnH = wrapRect.height || 50;
+
+      // Keep within playArea bounds
+      const padding = 10;
+      const maxX = areaRect.width - btnW - padding;
+      const maxY = areaRect.height - btnH - padding;
+
+      const x = Math.max(padding, Math.random() * maxX);
+      const y = Math.max(padding, 40 + Math.random() * (maxY - 40));
+
+      noWrap.style.left = x + "px";
+      noWrap.style.top = y + "px";
+    }
+
+    function makeYesBigger(){
+      yesScale = Math.min(2.8, yesScale + 0.18);
+      yesBtn.style.transform = `scale(${yesScale})`;
+      yesBtn.style.filter = `brightness(${1 + (yesScale-1)*0.12})`;
+    }
+
+    // Make "No" dodge when hovered / tapped near it
+    function dodge(){
+      noCount++;
+      makeYesBigger();
+      moveNoButton();
+
+      const messages = [
+        "Error: ‘No’ not found 😅",
+        "Nice try 😌",
+        "Hmm… the universe said “choose YES” 💘",
+        "Nope 😭",
+        "That button is kinda suspicious… 🤨",
+        "Try again… but maybe… YES? 😍"
+      ];
+      status.textContent = messages[Math.min(messages.length-1, noCount-1)];
+    }
+
+    // Desktop hover dodge
+    noBtn.addEventListener('mouseenter', dodge);
+
+    // Mobile tap dodge
+    noBtn.addEventListener('touchstart', function(e){
+      e.preventDefault();
+      dodge();
+    }, {passive:false});
+
+    // If she actually clicks No (somehow), still dodge + message
+    noBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      dodge();
+    });
+
+    // Yes → go to letter page
+    yesBtn.addEventListener('click', function(){
+      status.textContent = "YESS!!! 😭💖";
+      showPage(2);
+      // optional: remember choice
+      try { localStorage.setItem("valentine_yes", "true"); } catch {}
+    });
+
+    // Page 2 buttons
+    document.getElementById('backBtn').addEventListener('click', function(){
+      showPage(1);
+      status.textContent = "";
+      status2.textContent = "";
+    });
+
+    // Cute “confetti” text burst
+    document.getElementById('confettiBtn').addEventListener('click', function(){
+      const burst = ["✨","💖","💘","💗","💕","😍","🥺","🌙","🌸","🫶"];
+      status2.textContent = burst.sort(()=>Math.random()-0.5).slice(0,8).join(" ");
+    });
+
+    // Start the No button somewhere nice on load
+    window.addEventListener('load', () => {
+      moveNoButton();
+      // If you want it to auto-open page2 for testing, uncomment:
+      // showPage(2);
+    });
+  </script>
+</body>
+</html>
