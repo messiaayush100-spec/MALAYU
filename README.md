@@ -1,53 +1,48 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Ranjita 💛</title>
-  <meta name="description" content="A Valentine surprise 💛🌼" />
-
+  <title>Will you be my Valentine? 💛</title>
   <style>
     :root{
-      --bgA:#fff4d6;   /* warm cream */
-      --bgB:#ffe0ea;   /* soft pink */
-      --bgC:#fffbe6;   /* pale yellow */
-      --card: rgba(255,255,255,0.78);
-      --border: rgba(120,70,0,0.12);
-      --text: rgba(30,18,6,0.92);
-      --muted: rgba(30,18,6,0.70);
-      --shadow: 0 18px 55px rgba(30,18,6,.16);
+      --cream:#fff6d8;
+      --pink:#ffe3ef;
+      --butter:#fffbe8;
+      --card: rgba(255,255,255,0.82);
+      --text:#2c1b07;
+      --muted:#5a452e;
       --gold:#f4c430;
       --rose:#ff5a7a;
-      --green:#22c55e;
+      --shadow: 0 18px 55px rgba(44,27,7,.16);
+      --border: rgba(130,90,35,.14);
     }
 
     *{ box-sizing:border-box; }
-
     body{
       margin:0;
       min-height:100vh;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 12% 10%, rgba(244,196,48,.40), transparent 60%),
-        radial-gradient(900px 700px at 88% 18%, rgba(255,90,122,.22), transparent 62%),
+        radial-gradient(1100px 650px at 12% 10%, rgba(244,196,48,.42), transparent 60%),
+        radial-gradient(900px 650px at 88% 18%, rgba(255,90,122,.22), transparent 62%),
         radial-gradient(900px 800px at 55% 92%, rgba(34,197,94,.14), transparent 60%),
-        linear-gradient(135deg, var(--bgA), var(--bgB), var(--bgC));
+        linear-gradient(135deg, var(--cream), var(--pink), var(--butter));
       overflow-x:hidden;
     }
 
-    /* floating petals/flowers */
+    /* floating yellow-rose vibes */
     .floaties{
-      position:fixed;
-      inset:0;
+      position:fixed; inset:0;
       pointer-events:none;
-      opacity:0.75;
       z-index:0;
+      opacity:.75;
     }
     .floater{
       position:absolute;
       animation: floatUp linear infinite;
-      filter: drop-shadow(0 10px 18px rgba(30,18,6,.12));
+      filter: drop-shadow(0 10px 18px rgba(44,27,7,.12));
       user-select:none;
     }
     @keyframes floatUp{
@@ -63,11 +58,11 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:28px 16px;
+      padding:26px 14px;
     }
 
     .card{
-      width:min(960px, 100%);
+      width:min(980px, 100%);
       background:var(--card);
       border:1px solid var(--border);
       border-radius:26px;
@@ -78,26 +73,25 @@
 
     .topbar{
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       padding:14px 18px;
-      border-bottom:1px solid rgba(120,70,0,.10);
-      background: linear-gradient(90deg, rgba(244,196,48,.14), rgba(255,90,122,.10));
+      border-bottom:1px solid rgba(130,90,35,.12);
+      background: linear-gradient(90deg, rgba(244,196,48,.16), rgba(255,90,122,.10));
     }
-
     .badge{
       display:inline-flex;
       align-items:center;
       gap:10px;
       padding:8px 12px;
       border-radius:999px;
-      background: rgba(255,255,255,0.65);
-      border:1px solid rgba(120,70,0,.12);
+      background: rgba(255,255,255,0.70);
+      border:1px solid rgba(130,90,35,.14);
       font-size:13px;
       color:var(--muted);
+      font-weight:650;
     }
-    .badge b{color:var(--text); font-weight:750}
-    .tiny{font-size:13px; color:var(--muted);}
+    .tiny{ font-size:13px; color:var(--muted); }
 
     .content{
       display:grid;
@@ -105,27 +99,19 @@
       gap:18px;
       padding:22px;
     }
-    @media (max-width: 860px){
+    @media (max-width: 880px){
       .content{ grid-template-columns:1fr; }
     }
 
     .panel{
       padding:18px;
       border-radius:20px;
-      border:1px solid rgba(120,70,0,.12);
-      background: rgba(255,255,255,.62);
-    }
-
-    .roseBorder{
-      border:1px solid rgba(244,196,48,.35);
-      background:
-        radial-gradient(700px 240px at 15% 10%, rgba(244,196,48,.16), transparent 65%),
-        radial-gradient(600px 240px at 90% 80%, rgba(255,90,122,.12), transparent 65%),
-        rgba(255,255,255,.70);
+      border:1px solid rgba(130,90,35,.14);
+      background: rgba(255,255,255,.70);
     }
 
     h1{
-      margin:6px 0 8px;
+      margin:6px 0 10px;
       font-size: clamp(28px, 3.2vw, 42px);
       line-height:1.08;
       letter-spacing:-0.02em;
@@ -137,22 +123,25 @@
     }
     p{
       margin:10px 0;
+      font-size:15.7px;
+      line-height:1.65;
       color:var(--muted);
-      line-height:1.58;
-      font-size: 15.5px;
     }
-
     .bigline{
       color:var(--text);
-      font-weight:800;
+      font-weight:850;
+    }
+    .highlight{
+      color:var(--rose);
+      font-weight:900;
     }
 
     .miniCard{
       margin-top:14px;
       padding:14px 14px;
       border-radius:18px;
-      border:1px dashed rgba(120,70,0,.20);
-      background: rgba(255,255,255,.72);
+      border:1px dashed rgba(130,90,35,.22);
+      background: rgba(255,255,255,.78);
       position:relative;
       overflow:hidden;
     }
@@ -166,10 +155,16 @@
       letter-spacing:4px;
     }
 
+    .playArea{
+      position:relative;
+      width:100%;
+      min-height:170px;
+      margin-top:10px;
+    }
+
     .btnRow{
       display:flex;
       gap:14px;
-      margin-top:14px;
       flex-wrap:wrap;
       align-items:center;
     }
@@ -179,7 +174,7 @@
       cursor:pointer;
       border-radius:14px;
       padding:12px 16px;
-      font-weight:850;
+      font-weight:900;
       font-size:16px;
       transition: transform .12s ease, filter .12s ease;
       user-select:none;
@@ -187,31 +182,19 @@
     }
     button:active{ transform: scale(.98); }
 
-    .yesBtn{
+    #yesBtn{
       background: linear-gradient(135deg, var(--gold), #ffe28a);
       color:#2b1b00;
-      box-shadow: 0 16px 32px rgba(244,196,48,.25);
+      box-shadow: 0 16px 32px rgba(244,196,48,.28);
       transform-origin:center;
     }
-    .noBtn{
-      background: rgba(255,255,255,0.70);
+    #noBtn{
+      background: rgba(255,255,255,0.85);
       color:var(--text);
-      border:1px solid rgba(120,70,0,.16);
+      border:1px solid rgba(130,90,35,.18);
     }
 
-    .hint{
-      margin-top:10px;
-      font-size:13px;
-      color: rgba(30,18,6,.68);
-    }
-
-    /* No button dodging area */
-    .playArea{
-      position:relative;
-      width:100%;
-      min-height:170px;
-    }
-    .noWrap{
+    #noWrap{
       position:absolute;
       left: 160px;
       top: 62px;
@@ -222,40 +205,56 @@
       margin-top:10px;
       min-height:26px;
       font-size:14px;
-      color: rgba(30,18,6,.75);
-      font-weight:650;
+      color: rgba(44,27,7,.75);
+      font-weight:800;
+    }
+    .hint{
+      margin-top:6px;
+      font-size:13px;
+      color: rgba(44,27,7,.62);
     }
 
-    /* Pages */
     .page{ display:none; }
     .page.active{ display:block; }
 
     .photo{
       width:100%;
-      aspect-ratio: 4 / 5;
-      border-radius:18px;
-      object-fit:cover;
-      border:1px solid rgba(120,70,0,.14);
-      box-shadow: 0 20px 60px rgba(30,18,6,.18);
-      background: rgba(255,255,255,.50);
+      max-width:360px;
+      border-radius:20px;
+      border:1px solid rgba(130,90,35,.16);
+      box-shadow: 0 18px 50px rgba(44,27,7,.18);
+      background: rgba(255,255,255,.55);
     }
 
     .letter{
       white-space:pre-line;
       font-size:15.7px;
-      color: rgba(30,18,6,.82);
-      line-height:1.70;
+      line-height:1.75;
       padding:14px;
       border-radius:16px;
-      border:1px solid rgba(120,70,0,.12);
-      background: rgba(255,255,255,.75);
+      border:1px solid rgba(130,90,35,.14);
+      background: rgba(255,255,255,.80);
+      color: rgba(44,27,7,.84);
     }
 
     .footer{
       padding:16px 22px 22px;
-      color: rgba(30,18,6,.60);
       font-size:12.5px;
+      color: rgba(44,27,7,.58);
       text-align:center;
+    }
+
+    /* music button */
+    .musicBtn{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:10;
+      padding:10px 14px;
+      border-radius:999px;
+      background: rgba(255,255,255,.82);
+      border:1px solid rgba(130,90,35,.18);
+      font-weight:900;
     }
   </style>
 </head>
@@ -263,37 +262,38 @@
 <body>
   <div class="floaties" id="floaties"></div>
 
+  <!-- Background music (works if you upload song.mp3 next to index.html) -->
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+  <button class="musicBtn" id="musicBtn">▶️ Play music</button>
+
   <div class="wrap">
     <div class="card">
       <div class="topbar">
-        <div class="badge">💛🌼 A little yellow-rose Valentine for <b>Ranjita</b></div>
+        <div class="badge">💛🌼 Valentine surprise for <b>Ranjita</b></div>
         <div class="tiny" id="dateLine"></div>
       </div>
 
       <!-- PAGE 1 -->
       <div class="page active" id="page1">
         <div class="content">
-          <div class="panel roseBorder">
-            <h1>Hi Ranjita… 🌼💛</h1>
+          <div class="panel">
+            <h1>Hi Ranjita 💛</h1>
             <p class="bigline">
-              I call you <span style="color:var(--rose); font-weight:900;">Mayalu</span> — because you feel like home to my heart.
+              I call you <span class="highlight">Mayalu</span>.
             </p>
             <p>
-              I love talking to you. I don’t know why… but even from all this distance, I care for you so much.
-              And honestly? You make my days better.
+              I love talking to you. I don’t know why… but even from all this distance, I care for you.
             </p>
 
             <div class="miniCard">
-              <h2>So… will you be my Valentine? 💛</h2>
-              <p style="margin-top:-4px;">(Choose carefully 😄)</p>
+              <h2>Will you be my Valentine? 🌼💛</h2>
 
               <div class="playArea" id="playArea">
                 <div class="btnRow">
-                  <button class="yesBtn" id="yesBtn">YES 😍🌼</button>
-
-                  <span class="noWrap" id="noWrap">
-                    <button class="noBtn" id="noBtn">NO 🙄</button>
-                  </span>
+                  <button id="yesBtn">YES 😍🌼</button>
+                  <span id="noWrap"><button id="noBtn">NO 🙄</button></span>
                 </div>
               </div>
 
@@ -303,15 +303,12 @@
           </div>
 
           <div class="panel">
-            <h2>My little message 💌</h2>
+            <h2>One small thing 💌</h2>
             <p>
-              I know we’re long distance, but my feelings don’t feel “far.”
-              They feel close… like you’re right here.
+              If the music doesn’t start automatically, tap the “Play music” button once.
+              Phones usually block autoplay until the first tap.
             </p>
-            <p>
-              If you press “Yes”, I wrote you something special — with flowers and everything 🌼💛
-            </p>
-            <p class="bigline">Ready, Mayalu? 🫶</p>
+            <p class="bigline">Okay… now choose 😄💛</p>
           </div>
         </div>
       </div>
@@ -319,224 +316,34 @@
       <!-- PAGE 2 -->
       <div class="page" id="page2">
         <div class="content">
-          <div class="panel roseBorder">
+          <div class="panel">
             <h1>My Mayalu… 😭💛🌼</h1>
-            <p class="bigline">You said YES… and my heart just did a happy dance.</p>
+            <p class="bigline">You said YES… and my heart is smiling.</p>
 
-            <div class="letter" id="letterText">
+            <div class="letter">
 My Ranjita (my Mayalu) 💛,
 
 I love talking to you.
-I don’t even know why… but from all this distance, I care for you — deeply.
+I don’t even know why…
+but from all this distance, I care for you — deeply.
 
-You’re the person I want to tell everything to.
-My good news. My stress. My silly jokes.
-And somehow, you still feel close… even when you’re far.
+You feel close even when you’re far.
+And I don’t want to lose that feeling.
 
-I don’t need perfect moments.
-I just want real moments — with you.
-
-So here’s my honest question, from my whole heart:
+So I’m asking with my whole heart:
 Will you be my Valentine, Mayalu? 🌼💛
 
 Always yours,
 — Aayush 🫶
             </div>
 
-            <div class="btnRow">
-              <button class="yesBtn" id="flowersBtn">Give you flowers 🌼💛</button>
-              <button class="noBtn" id="backBtn">Back</button>
+            <div class="btnRow" style="margin-top:14px;">
+              <button id="flowersBtn">Give you flowers 🌼💛</button>
+              <button id="backBtn" style="background:rgba(255,255,255,.85); border:1px solid rgba(130,90,35,.18);">Back</button>
             </div>
             <div class="status" id="status2"></div>
           </div>
 
           <div class="panel">
             <h2>Her photo 📸</h2>
-            <p>Replace this photo with your favorite picture of Ranjita.</p>
-            <img
-              class="photo"
-              id="herPhoto"
-              alt="Ranjita"
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
-            />
-            <p class="hint">
-              Tip: If you want privacy, upload the photo to your repo (same folder) and set src="ranjita.jpg"
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        🌼💛 Yellow flowers for Ranjita | If you want, I can add music + a photo slideshow too.
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Date line
-    (function(){
-      const d = new Date();
-      const opts = { weekday:'short', year:'numeric', month:'short', day:'numeric' };
-      document.getElementById('dateLine').textContent = d.toLocaleDateString(undefined, opts) + " 💛";
-    })();
-
-    // Floating flowers/roses
-    (function makeFloaties(){
-      const box = document.getElementById('floaties');
-      const emojis = ["🌼","💛","🌼","💛","🌼","🌻","🌹","✨","🫶"];
-      const count = 26;
-
-      for(let i=0;i<count;i++){
-        const e = document.createElement('div');
-        e.className = 'floater';
-        e.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-        e.style.left = (Math.random()*100) + "vw";
-        e.style.top = (80 + Math.random()*50) + "vh";
-        e.style.animationDuration = (7 + Math.random()*9) + "s";
-        e.style.animationDelay = (Math.random()*6) + "s";
-        e.style.fontSize = (16 + Math.random()*20) + "px";
-        box.appendChild(e);
-      }
-    })();
-
-    const page1 = document.getElementById('page1');
-    const page2 = document.getElementById('page2');
-
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const noWrap = document.getElementById('noWrap');
-    const playArea = document.getElementById('playArea');
-
-    const status = document.getElementById('status');
-    const status2 = document.getElementById('status2');
-
-    let yesScale = 1;
-    let noCount = 0;
-
-    function showPage(n){
-      if(n === 1){
-        page1.classList.add('active');
-        page2.classList.remove('active');
-      }else{
-        page2.classList.add('active');
-        page1.classList.remove('active');
-      }
-    }
-
-    function moveNoButton(){
-      const areaRect = playArea.getBoundingClientRect();
-      const wrapRect = noWrap.getBoundingClientRect();
-      const btnW = wrapRect.width || 120;
-      const btnH = wrapRect.height || 50;
-
-      const padding = 10;
-      const maxX = areaRect.width - btnW - padding;
-      const maxY = areaRect.height - btnH - padding;
-
-      const x = Math.max(padding, Math.random() * maxX);
-      const y = Math.max(padding, 40 + Math.random() * (maxY - 40));
-
-      noWrap.style.left = x + "px";
-      noWrap.style.top = y + "px";
-    }
-
-    function makeYesBigger(){
-      yesScale = Math.min(3.0, yesScale + 0.18);
-      yesBtn.style.transform = `scale(${yesScale})`;
-      yesBtn.style.filter = `brightness(${1 + (yesScale-1)*0.10})`;
-    }
-
-    function dodge(){
-      noCount++;
-      makeYesBigger();
-      moveNoButton();
-
-      const messages = [
-        "Error: ‘No’ not allowed 😄💛",
-        "Nope 😌🌼",
-        "Mayalu deserves a YES 💛",
-        "Try again… 😭🌻",
-        "That button is shy 🤭",
-        "The flowers said YES 🌼💛✨"
-      ];
-      status.textContent = messages[Math.min(messages.length-1, noCount-1)];
-    }
-
-    // Desktop hover dodge
-    noBtn.addEventListener('mouseenter', dodge);
-    // Mobile tap dodge
-    noBtn.addEventListener('touchstart', function(e){
-      e.preventDefault();
-      dodge();
-    }, {passive:false});
-    // Click dodge
-    noBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      dodge();
-    });
-
-    // YES
-    yesBtn.addEventListener('click', function(){
-      status.textContent = "YESS!!! 😭💛🌼";
-      showPage(2);
-      try { localStorage.setItem("valentine_yes", "true"); } catch {}
-    });
-
-    // Back
-    document.getElementById('backBtn').addEventListener('click', function(){
-      showPage(1);
-      status.textContent = "";
-      status2.textContent = "";
-    });
-
-    // Flower burst
-    document.getElementById('flowersBtn').addEventListener('click', function(){
-      const burst = ["🌼","💛","🌻","🌼","💛","✨","🌹","🫶","💫","🌼"];
-      status2.textContent = burst.sort(()=>Math.random()-0.5).slice(0,10).join(" ");
-    });
-
-    // Position NO nicely at start
-    window.addEventListener('load', () => moveNoButton());
-  </script>
-</body>
-</html>
-<!-- Background Music -->
-<audio id="bgMusic" autoplay loop>
-  <source src="song.mp3" type="audio/mpeg" />
-</audio>
-
-<!-- Small music button (because phones often block autoplay) -->
-<button id="musicBtn" style="
-  position:fixed; bottom:16px; right:16px; z-index:10;
-  padding:10px 14px; border-radius:999px; border:1px solid rgba(120,70,0,.18);
-  background:rgba(255,255,255,.75); font-weight:800; cursor:pointer;
-">
-  ▶️ Play music
-</button>
-
-<script>
-  const bg = document.getElementById('bgMusic');
-  const btn = document.getElementById('musicBtn');
-
-  async function tryPlay(){
-    try {
-      await bg.play();
-      btn.textContent = "🔊 Music on";
-    } catch(e){
-      btn.textContent = "▶️ Tap to play music";
-    }
-  }
-
-  // Try once on load (may be blocked)
-  window.addEventListener('load', tryPlay);
-
-  // Always works when user taps
-  btn.addEventListener('click', async () => {
-    if (bg.paused) { await bg.play(); btn.textContent = "🔊 Music on"; }
-    else { bg.pause(); btn.textContent = "▶️ Play music"; }
-  });
-
-  // Also start music when she clicks YES (user action)
-  const yesBtn = document.getElementById('yesBtn');
-  if (yesBtn) yesBtn.addEventListener('click', () => { bg.play().catch(()=>{}); });
-</script>
+            <img class="photo" alt="Ranjita" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7QCEUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAGgcAigAYkZCTUQwMTAwMGU0MDI3MDAwMDA4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
