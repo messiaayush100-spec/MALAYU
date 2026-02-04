@@ -1,57 +1,59 @@
-# MALAYU ❤️
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Ronjita 💖</title>
-  <meta name="description" content="A little Valentine surprise 💘" />
+  <title>For Ranjita 💛</title>
+  <meta name="description" content="A Valentine surprise 💛🌼" />
+
   <style>
     :root{
-      --bg1:#0f1020;
-      --bg2:#2b0f1a;
-      --card: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.14);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.7);
-      --pink:#ff4d8d;
-      --pink2:#ff86b7;
-      --green:#30d158;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --bgA:#fff4d6;   /* warm cream */
+      --bgB:#ffe0ea;   /* soft pink */
+      --bgC:#fffbe6;   /* pale yellow */
+      --card: rgba(255,255,255,0.78);
+      --border: rgba(120,70,0,0.12);
+      --text: rgba(30,18,6,0.92);
+      --muted: rgba(30,18,6,0.70);
+      --shadow: 0 18px 55px rgba(30,18,6,.16);
+      --gold:#f4c430;
+      --rose:#ff5a7a;
+      --green:#22c55e;
     }
 
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
+
     body{
       margin:0;
       min-height:100vh;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 15%, rgba(255,77,141,.35), transparent 60%),
-        radial-gradient(900px 600px at 85% 25%, rgba(48,209,88,.18), transparent 55%),
-        radial-gradient(900px 800px at 60% 90%, rgba(255,134,183,.20), transparent 60%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
+        radial-gradient(1200px 700px at 12% 10%, rgba(244,196,48,.40), transparent 60%),
+        radial-gradient(900px 700px at 88% 18%, rgba(255,90,122,.22), transparent 62%),
+        radial-gradient(900px 800px at 55% 92%, rgba(34,197,94,.14), transparent 60%),
+        linear-gradient(135deg, var(--bgA), var(--bgB), var(--bgC));
       overflow-x:hidden;
     }
 
-    /* Floating hearts */
-    .hearts{
+    /* floating petals/flowers */
+    .floaties{
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:0.55;
+      opacity:0.75;
       z-index:0;
     }
-    .heart{
+    .floater{
       position:absolute;
-      font-size:18px;
       animation: floatUp linear infinite;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+      filter: drop-shadow(0 10px 18px rgba(30,18,6,.12));
+      user-select:none;
     }
     @keyframes floatUp{
-      from{ transform: translateY(20vh) translateX(0) rotate(0deg); opacity:0;}
-      10%{opacity:1}
-      to{ transform: translateY(-120vh) translateX(60px) rotate(35deg); opacity:0;}
+      from{ transform: translateY(25vh) translateX(0) rotate(0deg); opacity:0;}
+      12%{opacity:1}
+      to{ transform: translateY(-130vh) translateX(70px) rotate(25deg); opacity:0;}
     }
 
     .wrap{
@@ -65,13 +67,13 @@
     }
 
     .card{
-      width:min(920px, 100%);
+      width:min(960px, 100%);
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:24px;
+      border-radius:26px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
       overflow:hidden;
+      backdrop-filter: blur(10px);
     }
 
     .topbar{
@@ -79,28 +81,27 @@
       align-items:center;
       justify-content:space-between;
       padding:14px 18px;
-      border-bottom:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(120,70,0,.10);
+      background: linear-gradient(90deg, rgba(244,196,48,.14), rgba(255,90,122,.10));
     }
+
     .badge{
       display:inline-flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       padding:8px 12px;
       border-radius:999px;
-      background: rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,0.65);
+      border:1px solid rgba(120,70,0,.12);
       font-size:13px;
       color:var(--muted);
     }
-    .badge b{color:var(--text); font-weight:650}
-    .tiny{
-      font-size:13px;
-      color:var(--muted);
-    }
+    .badge b{color:var(--text); font-weight:750}
+    .tiny{font-size:13px; color:var(--muted);}
 
     .content{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.1fr .9fr;
       gap:18px;
       padding:22px;
     }
@@ -110,38 +111,65 @@
 
     .panel{
       padding:18px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.10);
+      border-radius:20px;
+      border:1px solid rgba(120,70,0,.12);
+      background: rgba(255,255,255,.62);
+    }
+
+    .roseBorder{
+      border:1px solid rgba(244,196,48,.35);
+      background:
+        radial-gradient(700px 240px at 15% 10%, rgba(244,196,48,.16), transparent 65%),
+        radial-gradient(600px 240px at 90% 80%, rgba(255,90,122,.12), transparent 65%),
+        rgba(255,255,255,.70);
     }
 
     h1{
       margin:6px 0 8px;
-      font-size: clamp(28px, 3.2vw, 40px);
+      font-size: clamp(28px, 3.2vw, 42px);
       line-height:1.08;
       letter-spacing:-0.02em;
     }
     h2{
       margin:0 0 10px;
-      font-size: clamp(20px, 2.3vw, 26px);
+      font-size: clamp(20px, 2.3vw, 27px);
       letter-spacing:-0.01em;
     }
     p{
       margin:10px 0;
       color:var(--muted);
-      line-height:1.55;
+      line-height:1.58;
       font-size: 15.5px;
     }
 
     .bigline{
       color:var(--text);
-      font-weight:650;
+      font-weight:800;
+    }
+
+    .miniCard{
+      margin-top:14px;
+      padding:14px 14px;
+      border-radius:18px;
+      border:1px dashed rgba(120,70,0,.20);
+      background: rgba(255,255,255,.72);
+      position:relative;
+      overflow:hidden;
+    }
+    .miniCard:before{
+      content:"🌼💛🌼💛🌼";
+      position:absolute;
+      top:10px;
+      right:12px;
+      font-size:14px;
+      opacity:.55;
+      letter-spacing:4px;
     }
 
     .btnRow{
       display:flex;
       gap:14px;
-      margin-top:16px;
+      margin-top:14px;
       flex-wrap:wrap;
       align-items:center;
     }
@@ -151,7 +179,7 @@
       cursor:pointer;
       border-radius:14px;
       padding:12px 16px;
-      font-weight:750;
+      font-weight:850;
       font-size:16px;
       transition: transform .12s ease, filter .12s ease;
       user-select:none;
@@ -160,42 +188,33 @@
     button:active{ transform: scale(.98); }
 
     .yesBtn{
-      background: linear-gradient(135deg, var(--green), #8ef7a7);
-      color:#08240f;
-      box-shadow: 0 14px 30px rgba(48,209,88,.18);
+      background: linear-gradient(135deg, var(--gold), #ffe28a);
+      color:#2b1b00;
+      box-shadow: 0 16px 32px rgba(244,196,48,.25);
       transform-origin:center;
     }
     .noBtn{
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.70);
       color:var(--text);
-      border:1px solid rgba(255,255,255,.18);
+      border:1px solid rgba(120,70,0,.16);
     }
 
     .hint{
       margin-top:10px;
       font-size:13px;
-      color: rgba(255,255,255,.68);
+      color: rgba(30,18,6,.68);
     }
 
-    .miniCard{
-      margin-top:14px;
-      padding:12px 12px;
-      border-radius:16px;
-      border:1px dashed rgba(255,255,255,.18);
-      background: rgba(255,255,255,0.06);
-    }
-
-    /* “No” dodging area */
+    /* No button dodging area */
     .playArea{
       position:relative;
       width:100%;
       min-height:170px;
     }
-
     .noWrap{
       position:absolute;
       left: 160px;
-      top: 60px;
+      top: 62px;
       display:inline-block;
     }
 
@@ -203,79 +222,75 @@
       margin-top:10px;
       min-height:26px;
       font-size:14px;
-      color: rgba(255,255,255,.78);
+      color: rgba(30,18,6,.75);
+      font-weight:650;
     }
 
-    /* Page switching */
+    /* Pages */
     .page{ display:none; }
     .page.active{ display:block; }
 
-    /* Letter side */
     .photo{
       width:100%;
       aspect-ratio: 4 / 5;
       border-radius:18px;
       object-fit:cover;
-      border:1px solid rgba(255,255,255,.16);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(120,70,0,.14);
+      box-shadow: 0 20px 60px rgba(30,18,6,.18);
+      background: rgba(255,255,255,.50);
     }
+
     .letter{
       white-space:pre-line;
-      font-size:15.5px;
-      color: rgba(255,255,255,.82);
-      line-height:1.65;
+      font-size:15.7px;
+      color: rgba(30,18,6,.82);
+      line-height:1.70;
       padding:14px;
       border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.12);
+      border:1px solid rgba(120,70,0,.12);
+      background: rgba(255,255,255,.75);
     }
 
     .footer{
       padding:16px 22px 22px;
-      color: rgba(255,255,255,.62);
+      color: rgba(30,18,6,.60);
       font-size:12.5px;
       text-align:center;
     }
-
-    a{
-      color: rgba(255,255,255,.88);
-      text-decoration: none;
-      border-bottom:1px dotted rgba(255,255,255,.35);
-    }
   </style>
 </head>
+
 <body>
-  <div class="hearts" id="hearts"></div>
+  <div class="floaties" id="floaties"></div>
 
   <div class="wrap">
     <div class="card">
       <div class="topbar">
-        <div class="badge">💌 Made with <b>too much</b> love</div>
+        <div class="badge">💛🌼 A little yellow-rose Valentine for <b>Ranjita</b></div>
         <div class="tiny" id="dateLine"></div>
       </div>
 
       <!-- PAGE 1 -->
       <div class="page active" id="page1">
         <div class="content">
-          <div class="panel">
-            <h1>Hey Ronjita… 💖</h1>
+          <div class="panel roseBorder">
+            <h1>Hi Ranjita… 🌼💛</h1>
             <p class="bigline">
-              I know we’re long distance, but my heart is literally right there with you.
+              I call you <span style="color:var(--rose); font-weight:900;">Mayalu</span> — because you feel like home to my heart.
             </p>
             <p>
-              So I made you a tiny website — because words alone aren’t enough.
-              Before anything else… I need to ask you one important question:
+              I love talking to you. I don’t know why… but even from all this distance, I care for you so much.
+              And honestly? You make my days better.
             </p>
 
             <div class="miniCard">
-              <h2>Will you be my Valentine? 💘</h2>
-              <p style="margin-top:-4px;">Choose wisely 😄</p>
+              <h2>So… will you be my Valentine? 💛</h2>
+              <p style="margin-top:-4px;">(Choose carefully 😄)</p>
 
               <div class="playArea" id="playArea">
                 <div class="btnRow">
-                  <button class="yesBtn" id="yesBtn">YES 😍</button>
-                  <!-- No button is placed absolutely so we can move it -->
+                  <button class="yesBtn" id="yesBtn">YES 😍🌼</button>
+
                   <span class="noWrap" id="noWrap">
                     <button class="noBtn" id="noBtn">NO 🙄</button>
                   </span>
@@ -283,22 +298,20 @@
               </div>
 
               <div class="status" id="status"></div>
-              <div class="hint">Tip: if “No” keeps acting weird… that’s because it is 😌</div>
+              <div class="hint">Tip: “No” might be broken… by love 😌💛</div>
             </div>
           </div>
 
           <div class="panel">
-            <h2>What this is 🥺</h2>
+            <h2>My little message 💌</h2>
             <p>
-              Just a small surprise — a warm little corner of the internet that belongs to us.
-              If you press “Yes”, there’s something waiting for you.
+              I know we’re long distance, but my feelings don’t feel “far.”
+              They feel close… like you’re right here.
             </p>
             <p>
-              And if you press “No”… well… the universe might throw an “error” 😅
+              If you press “Yes”, I wrote you something special — with flowers and everything 🌼💛
             </p>
-            <p class="bigline">
-              Ready? 💞
-            </p>
+            <p class="bigline">Ready, Mayalu? 🫶</p>
           </div>
         </div>
       </div>
@@ -306,34 +319,32 @@
       <!-- PAGE 2 -->
       <div class="page" id="page2">
         <div class="content">
-          <div class="panel">
-            <h1>YAYYYYY 😭💖</h1>
-            <p class="bigline">Okay… now come read this, my love.</p>
+          <div class="panel roseBorder">
+            <h1>My Mayalu… 😭💛🌼</h1>
+            <p class="bigline">You said YES… and my heart just did a happy dance.</p>
 
             <div class="letter" id="letterText">
-My Ronjita 💗,
+My Ranjita (my Mayalu) 💛,
 
-Being far from you doesn’t make my feelings smaller.
-It makes them louder.
+I love talking to you.
+I don’t even know why… but from all this distance, I care for you — deeply.
 
-I think about you in the little moments—
-when I wake up, when I see something beautiful,
-when I want to share a dumb joke,
-when I wish I could just hold your hand for one minute.
+You’re the person I want to tell everything to.
+My good news. My stress. My silly jokes.
+And somehow, you still feel close… even when you’re far.
 
-I don’t need a perfect day.
-I just need you.
+I don’t need perfect moments.
+I just want real moments — with you.
 
-So here I am, asking from my whole heart:
-Will you be my Valentine… and keep choosing me,
-again and again?
+So here’s my honest question, from my whole heart:
+Will you be my Valentine, Mayalu? 🌼💛
 
-Forever yours,
-— Aayush 💌
+Always yours,
+— Aayush 🫶
             </div>
 
             <div class="btnRow">
-              <button class="yesBtn" id="confettiBtn">Tap for extra love ✨</button>
+              <button class="yesBtn" id="flowersBtn">Give you flowers 🌼💛</button>
               <button class="noBtn" id="backBtn">Back</button>
             </div>
             <div class="status" id="status2"></div>
@@ -341,47 +352,50 @@ Forever yours,
 
           <div class="panel">
             <h2>Her photo 📸</h2>
-            <p>Replace the image link in the code with your favorite photo of her.</p>
+            <p>Replace this photo with your favorite picture of Ranjita.</p>
             <img
               class="photo"
               id="herPhoto"
-              alt="Ronjita"
+              alt="Ranjita"
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
             />
-            <p class="hint">If you want it private, use a photo uploaded to your hosting site instead of a public link.</p>
+            <p class="hint">
+              Tip: If you want privacy, upload the photo to your repo (same folder) and set src="ranjita.jpg"
+            </p>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        Made for Ronjita 💘 | If you want, I can also add music, a countdown, and a photo gallery.
+        🌼💛 Yellow flowers for Ranjita | If you want, I can add music + a photo slideshow too.
       </div>
     </div>
   </div>
 
   <script>
-    // Put today's date in the header
+    // Date line
     (function(){
       const d = new Date();
       const opts = { weekday:'short', year:'numeric', month:'short', day:'numeric' };
-      document.getElementById('dateLine').textContent = d.toLocaleDateString(undefined, opts) + " ✨";
+      document.getElementById('dateLine').textContent = d.toLocaleDateString(undefined, opts) + " 💛";
     })();
 
-    // Floating hearts background
-    (function makeHearts(){
-      const hearts = document.getElementById('hearts');
-      const emojis = ["💖","💘","💗","💕","💞","😍","🥺","✨"];
-      const count = 24;
+    // Floating flowers/roses
+    (function makeFloaties(){
+      const box = document.getElementById('floaties');
+      const emojis = ["🌼","💛","🌼","💛","🌼","🌻","🌹","✨","🫶"];
+      const count = 26;
+
       for(let i=0;i<count;i++){
-        const s = document.createElement('div');
-        s.className = 'heart';
-        s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-        s.style.left = (Math.random()*100) + "vw";
-        s.style.top = (80 + Math.random()*40) + "vh";
-        s.style.animationDuration = (7 + Math.random()*8) + "s";
-        s.style.animationDelay = (Math.random()*6) + "s";
-        s.style.fontSize = (16 + Math.random()*18) + "px";
-        hearts.appendChild(s);
+        const e = document.createElement('div');
+        e.className = 'floater';
+        e.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+        e.style.left = (Math.random()*100) + "vw";
+        e.style.top = (80 + Math.random()*50) + "vh";
+        e.style.animationDuration = (7 + Math.random()*9) + "s";
+        e.style.animationDelay = (Math.random()*6) + "s";
+        e.style.fontSize = (16 + Math.random()*20) + "px";
+        box.appendChild(e);
       }
     })();
 
@@ -415,7 +429,6 @@ Forever yours,
       const btnW = wrapRect.width || 120;
       const btnH = wrapRect.height || 50;
 
-      // Keep within playArea bounds
       const padding = 10;
       const maxX = areaRect.width - btnW - padding;
       const maxY = areaRect.height - btnH - padding;
@@ -428,70 +441,102 @@ Forever yours,
     }
 
     function makeYesBigger(){
-      yesScale = Math.min(2.8, yesScale + 0.18);
+      yesScale = Math.min(3.0, yesScale + 0.18);
       yesBtn.style.transform = `scale(${yesScale})`;
-      yesBtn.style.filter = `brightness(${1 + (yesScale-1)*0.12})`;
+      yesBtn.style.filter = `brightness(${1 + (yesScale-1)*0.10})`;
     }
 
-    // Make "No" dodge when hovered / tapped near it
     function dodge(){
       noCount++;
       makeYesBigger();
       moveNoButton();
 
       const messages = [
-        "Error: ‘No’ not found 😅",
-        "Nice try 😌",
-        "Hmm… the universe said “choose YES” 💘",
-        "Nope 😭",
-        "That button is kinda suspicious… 🤨",
-        "Try again… but maybe… YES? 😍"
+        "Error: ‘No’ not allowed 😄💛",
+        "Nope 😌🌼",
+        "Mayalu deserves a YES 💛",
+        "Try again… 😭🌻",
+        "That button is shy 🤭",
+        "The flowers said YES 🌼💛✨"
       ];
       status.textContent = messages[Math.min(messages.length-1, noCount-1)];
     }
 
     // Desktop hover dodge
     noBtn.addEventListener('mouseenter', dodge);
-
     // Mobile tap dodge
     noBtn.addEventListener('touchstart', function(e){
       e.preventDefault();
       dodge();
     }, {passive:false});
-
-    // If she actually clicks No (somehow), still dodge + message
+    // Click dodge
     noBtn.addEventListener('click', function(e){
       e.preventDefault();
       dodge();
     });
 
-    // Yes → go to letter page
+    // YES
     yesBtn.addEventListener('click', function(){
-      status.textContent = "YESS!!! 😭💖";
+      status.textContent = "YESS!!! 😭💛🌼";
       showPage(2);
-      // optional: remember choice
       try { localStorage.setItem("valentine_yes", "true"); } catch {}
     });
 
-    // Page 2 buttons
+    // Back
     document.getElementById('backBtn').addEventListener('click', function(){
       showPage(1);
       status.textContent = "";
       status2.textContent = "";
     });
 
-    // Cute “confetti” text burst
-    document.getElementById('confettiBtn').addEventListener('click', function(){
-      const burst = ["✨","💖","💘","💗","💕","😍","🥺","🌙","🌸","🫶"];
-      status2.textContent = burst.sort(()=>Math.random()-0.5).slice(0,8).join(" ");
+    // Flower burst
+    document.getElementById('flowersBtn').addEventListener('click', function(){
+      const burst = ["🌼","💛","🌻","🌼","💛","✨","🌹","🫶","💫","🌼"];
+      status2.textContent = burst.sort(()=>Math.random()-0.5).slice(0,10).join(" ");
     });
 
-    // Start the No button somewhere nice on load
-    window.addEventListener('load', () => {
-      moveNoButton();
-      // If you want it to auto-open page2 for testing, uncomment:
-      // showPage(2);
-    });
+    // Position NO nicely at start
+    window.addEventListener('load', () => moveNoButton());
   </script>
 </body>
 </html>
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="song.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Small music button (because phones often block autoplay) -->
+<button id="musicBtn" style="
+  position:fixed; bottom:16px; right:16px; z-index:10;
+  padding:10px 14px; border-radius:999px; border:1px solid rgba(120,70,0,.18);
+  background:rgba(255,255,255,.75); font-weight:800; cursor:pointer;
+">
+  ▶️ Play music
+</button>
+
+<script>
+  const bg = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+
+  async function tryPlay(){
+    try {
+      await bg.play();
+      btn.textContent = "🔊 Music on";
+    } catch(e){
+      btn.textContent = "▶️ Tap to play music";
+    }
+  }
+
+  // Try once on load (may be blocked)
+  window.addEventListener('load', tryPlay);
+
+  // Always works when user taps
+  btn.addEventListener('click', async () => {
+    if (bg.paused) { await bg.play(); btn.textContent = "🔊 Music on"; }
+    else { bg.pause(); btn.textContent = "▶️ Play music"; }
+  });
+
+  // Also start music when she clicks YES (user action)
+  const yesBtn = document.getElementById('yesBtn');
+  if (yesBtn) yesBtn.addEventListener('click', () => { bg.play().catch(()=>{}); });
+</script>
